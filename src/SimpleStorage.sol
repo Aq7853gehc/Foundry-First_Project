@@ -1,15 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8;
+pragma solidity ^0.8.24;
 
 contract SimpleStorage {
-    uint256 public favNumber;
+    uint256 favNumber;
 
-    struct Person {
-        uint256 favNumberP;
-        string name;
+    function store(uint256 _favNum) public virtual {
+        favNumber = _favNum;
     }
 
-    function store(uint256 _favNum) public {
-         favNumber = _favNum;
+    function retrive() public view returns (uint256) {
+        return favNumber;
     }
 }
